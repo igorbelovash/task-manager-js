@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Статистика — Task Manager</title>
+  <script type="module" crossorigin src="/task-manager-js/assets/style-CArAuplY.js"></script>
+  <link rel="stylesheet" crossorigin href="/task-manager-js/assets/style-DrPoWloB.css">
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="sidebar-logo">✦ <span>Task</span>Board</div>
+    <a href="tasks.html" class="nav-link">
+      <span class="nav-icon">📋</span>
+      <span>Задачі</span>
+    </a>
+    <a href="notes.html" class="nav-link">
+      <span class="nav-icon">📝</span>
+      <span>Нотатки</span>
+    </a>
+    <a href="stats.html" class="nav-link active">
+      <span class="nav-icon">📊</span>
+      <span>Статистика</span>
+    </a>
+    <a href="settings.html" class="nav-link">
+      <span class="nav-icon">⚙️</span>
+      <span>Налаштування</span>
+    </a>
+    <div class="sidebar-footer">task-manager-js v1.0</div>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <h1 class="page-title">Статистика</h1>
+      <p class="page-subtitle">Твій прогрес у цифрах</p>
+    </div>
+
+    <!-- КАРТКИ ЦИФР — Крок 5 (JS заповнює значення) -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Всього задач</div>
+        <div class="stat-value accent" id="stat-total">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Виконано</div>
+        <div class="stat-value green" id="stat-done">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Активних</div>
+        <div class="stat-value amber" id="stat-active">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">% виконання</div>
+        <div class="stat-value" id="stat-percent">0%</div>
+      </div>
+    </div>
+
+    <!-- ПРОГРЕС-БАРИ ПО ПРІОРИТЕТАХ — Крок 5 (reduce) -->
+    <div class="progress-section">
+      <h3>Задачі по пріоритету</h3>
+
+      <div class="progress-item">
+        <div class="progress-label">
+          <span>🟢 Низький</span>
+          <span id="label-low">0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill fill-low" id="bar-low" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="progress-item">
+        <div class="progress-label">
+          <span>🟡 Середній</span>
+          <span id="label-medium">0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill fill-medium" id="bar-medium" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="progress-item">
+        <div class="progress-label">
+          <span>🔴 Високий</span>
+          <span id="label-high">0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill fill-high" id="bar-high" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ЗАГАЛЬНИЙ ПРОГРЕС — Крок 5 -->
+    <div class="progress-section">
+      <h3>Загальний прогрес</h3>
+      <div class="progress-item">
+        <div class="progress-label">
+          <span>Виконано задач</span>
+          <span id="label-progress">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill fill-main" id="bar-progress" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- НОТАТКИ — Крок 5 -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Нотаток всього</div>
+        <div class="stat-value accent" id="stat-notes">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Унікальних тегів</div>
+        <div class="stat-value" id="stat-tags">0</div>
+      </div>
+    </div>
+
+  </main>
+
+
+</body>
+</html>
