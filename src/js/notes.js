@@ -1,4 +1,4 @@
-import Note from "./note";
+import Note from "./Note";
 
 const formEl = document.querySelector("#note-form");
 const searchInputEl= document.querySelector("#search-input");

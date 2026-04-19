@@ -1,4 +1,4 @@
-import Task from "./task";
+import Task from "./Task";
 
 const formEl = document.querySelector("#task-form");
 const filterTabsEl= document.querySelector("#filter-tabs");
