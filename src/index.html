@@ -1,18 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <main>
-      <ul>
-        <li><a href="./1-gallery.html">Gallery</a></li>
-        <li><a href="./2-form.html">Form</a></li>
-      </ul>
-    </main>
-  </body>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Задачі — Task Manager</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="sidebar-logo">✦ <span>Task</span>Board</div>
+    <a href="tasks.html" class="nav-link active">
+      <span class="nav-icon">📋</span>
+      <span>Задачі</span>
+    </a>
+    <a href="notes.html" class="nav-link">
+      <span class="nav-icon">📝</span>
+      <span>Нотатки</span>
+    </a>
+    <a href="stats.html" class="nav-link">
+      <span class="nav-icon">📊</span>
+      <span>Статистика</span>
+    </a>
+    <a href="settings.html" class="nav-link">
+      <span class="nav-icon">⚙️</span>
+      <span>Налаштування</span>
+    </a>
+    <div class="sidebar-footer">task-manager-js v1.0</div>
+  </nav>
+  <main class="main">
+    <div class="page-header">
+      <h1 class="page-title">Задачі</h1>
+      <p class="page-subtitle">Керуй своїми завданнями</p>
+    </div>
+    <div class="form-card">
+      <form id="task-form">
+        <div class="form-row">
+          <div class="form-group" style="flex: 2;">
+            <label for="task-title">Назва задачі</label>
+            <input type="text" id="task-title" placeholder="Що потрібно зробити?" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="task-priority">Пріоритет</label>
+            <select id="task-priority">
+              <option value="low">🟢 Низький</option>
+              <option value="medium" selected>🟡 Середній</option>
+              <option value="high">🔴 Високий</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex: 0; justify-content: flex-end;">
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary">+ Додати</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-tab active" data-filter="all">Всі</button>
+      <button class="filter-tab" data-filter="active">Активні</button>
+      <button class="filter-tab" data-filter="done">Виконані</button>
+    </div>
+    <div class="tasks-list" id="tasks-list">
+      <div class="empty-state">
+        <p>📋</p>
+        <p>Задач ще немає. Додай першу!</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="js/tasks.js"></script>
+</body>
 </html>

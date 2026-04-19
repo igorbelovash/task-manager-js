@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Нотатки — Task Manager</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="sidebar-logo">✦ <span>Task</span>Board</div>
+    <a href="tasks.html" class="nav-link">
+      <span class="nav-icon">📋</span>
+      <span>Задачі</span>
+    </a>
+    <a href="notes.html" class="nav-link active">
+      <span class="nav-icon">📝</span>
+      <span>Нотатки</span>
+    </a>
+    <a href="stats.html" class="nav-link">
+      <span class="nav-icon">📊</span>
+      <span>Статистика</span>
+    </a>
+    <a href="settings.html" class="nav-link">
+      <span class="nav-icon">⚙️</span>
+      <span>Налаштування</span>
+    </a>
+    <div class="sidebar-footer">task-manager-js v1.0</div>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <h1 class="page-title">Нотатки</h1>
+      <p class="page-subtitle">Зберігай важливі думки та ідеї</p>
+    </div>
+
+    <div class="form-card">
+      <form id="note-form">
+        <div class="form-row" style="margin-bottom: 10px;">
+          <div class="form-group" style="flex: 2;">
+            <label for="note-title">Заголовок</label>
+            <input type="text" id="note-title" placeholder="Назва нотатки..." autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="note-tag">Тег</label>
+            <input type="text" id="note-tag" placeholder="робота, ідея..." autocomplete="off" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="note-body">Текст</label>
+            <textarea id="note-body" placeholder="Що хочеш занотувати?"></textarea>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+          <button type="submit" class="btn btn-primary">+ Додати нотатку</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="search-input" placeholder="Пошук по нотатках..." />
+    </div>
+
+    <div class="notes-grid" id="notes-grid">
+      <div class="empty-state" style="grid-column: 1/-1;">
+        <p>📝</p>
+        <p>Нотаток ще немає. Додай першу!</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="js/notes.js"></script>
+
+</body>
+</html>

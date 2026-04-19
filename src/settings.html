@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Налаштування — Task Manager</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="sidebar-logo">✦ <span>Task</span>Board</div>
+    <a href="tasks.html" class="nav-link">
+      <span class="nav-icon">📋</span>
+      <span>Задачі</span>
+    </a>
+    <a href="notes.html" class="nav-link">
+      <span class="nav-icon">📝</span>
+      <span>Нотатки</span>
+    </a>
+    <a href="stats.html" class="nav-link">
+      <span class="nav-icon">📊</span>
+      <span>Статистика</span>
+    </a>
+    <a href="settings.html" class="nav-link active">
+      <span class="nav-icon">⚙️</span>
+      <span>Налаштування</span>
+    </a>
+    <div class="sidebar-footer">task-manager-js v1.0</div>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <h1 class="page-title">Налаштування</h1>
+      <p class="page-subtitle">Персоналізуй свій досвід</p>
+    </div>
+
+    <!-- ПРОФІЛЬ — Крок 6 (деструктуризація при читанні) -->
+    <div class="settings-section">
+      <h3>Профіль</h3>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Ім'я користувача</div>
+          <div class="settings-desc">Відображається у вітанні</div>
+        </div>
+        <div class="settings-right">
+          <input type="text" id="username" placeholder="Твоє ім'я..." />
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Мова інтерфейсу</div>
+          <div class="settings-desc">Наразі тільки для збереження</div>
+        </div>
+        <div class="settings-right">
+          <select id="lang-select">
+            <option value="uk">🇺🇦 Українська</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="pl">🇵🇱 Polski</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ВИГЛЯД — Крок 6 (toggle) -->
+    <div class="settings-section">
+      <h3>Вигляд</h3>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Темна тема</div>
+          <div class="settings-desc">Зберігається між сесіями</div>
+        </div>
+        <div>
+          <div class="toggle-wrap">
+            <div class="toggle on" id="theme-toggle"></div>
+            <span id="theme-label">Увімкнено</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Сортування задач</div>
+          <div class="settings-desc">Порядок відображення за замовчуванням</div>
+        </div>
+        <div class="settings-right">
+          <select id="sort-select">
+            <option value="date-desc">Спочатку нові</option>
+            <option value="date-asc">Спочатку старі</option>
+            <option value="priority">За пріоритетом</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ЗБЕРЕЖЕННЯ -->
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
+      <button class="btn btn-primary" id="save-btn">Зберегти налаштування</button>
+    </div>
+
+    <!-- НЕБЕЗПЕЧНА ЗОНА — Крок 6 (confirm + очищення) -->
+    <div class="danger-section">
+      <h3>⚠ Небезпечна зона</h3>
+      <div class="danger-row">
+        <div class="danger-desc">
+          Видалити всі задачі, нотатки та налаштування. Цю дію не можна скасувати.
+        </div>
+        <button class="btn btn-danger" id="clear-btn">Очистити всі дані</button>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="js/settings.js"></script>
+
+</body>
+</html>
