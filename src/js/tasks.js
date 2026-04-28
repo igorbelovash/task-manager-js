@@ -5,7 +5,15 @@ const filterTabsEl= document.querySelector("#filter-tabs");
 const tasksListEl = document.querySelector("#tasks-list");
 const tasksList = JSON.parse(localStorage.getItem('tasks')) ?? [];
 
+const quoteText = document.querySelector("#quote-text");
+const quoteAuthor = document.querySelector("#quote-author");
+
 renderList(tasksList);
+fetchData("https://api.quotable.io/random")
+    .then((data) => {
+        quoteText.textContent = data.content;
+        quoteAuthor.textContent = data.author;
+    });
 
 formEl.addEventListener("submit", handleSubmit);
 filterTabsEl.addEventListener("click", (event) => {
@@ -22,6 +30,8 @@ filterTabsEl.addEventListener("click", (event) => {
     });
     
     renderList(result);
+    document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+    event.target.classList.add('active');
 });
 
 tasksListEl.addEventListener("click", (event) => {
@@ -98,4 +108,18 @@ function handleDone(event) {
         localStorage.setItem('tasks', JSON.stringify(tasksList));
         renderList(tasksList);
     }
+}
+
+function fetchData(url) {
+    return fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+
+            return response.json();
+        })
+        .catch((error) => {
+            console.log(error);     
+        })
 }
