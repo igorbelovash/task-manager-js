@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Статистика — Task Manager</title>
-  <script type="module" crossorigin src="/task-manager-js/assets/style-CArAuplY.js"></script>
+  <script type="module" crossorigin src="/task-manager-js/stats.js"></script>
+  <link rel="modulepreload" crossorigin href="/task-manager-js/assets/style-CArAuplY.js">
   <link rel="stylesheet" crossorigin href="/task-manager-js/assets/style-DrPoWloB.css">
 </head>
 <body>
@@ -36,7 +37,6 @@
       <p class="page-subtitle">Твій прогрес у цифрах</p>
     </div>
 
-    <!-- КАРТКИ ЦИФР — Крок 5 (JS заповнює значення) -->
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-label">Всього задач</div>
@@ -56,7 +56,6 @@
       </div>
     </div>
 
-    <!-- ПРОГРЕС-БАРИ ПО ПРІОРИТЕТАХ — Крок 5 (reduce) -->
     <div class="progress-section">
       <h3>Задачі по пріоритету</h3>
 
@@ -91,7 +90,6 @@
       </div>
     </div>
 
-    <!-- ЗАГАЛЬНИЙ ПРОГРЕС — Крок 5 -->
     <div class="progress-section">
       <h3>Загальний прогрес</h3>
       <div class="progress-item">
@@ -105,7 +103,6 @@
       </div>
     </div>
 
-    <!-- НОТАТКИ — Крок 5 -->
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-label">Нотаток всього</div>
