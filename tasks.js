@@ -11,4 +11,4 @@ import"./assets/style-CArAuplY.js";class d{constructor(e,a){this.id=Date.now(),t
              </div>
         </div>
         `).join("")}function h(t){t.preventDefault();const e=document.querySelector("#task-title").value,a=document.querySelector("#task-priority").value,s=new d(e,a);r.push(s),o(r),localStorage.setItem("tasks",JSON.stringify(r)),i.reset()}function o(t){c.innerHTML=m(t)}function g(t){const e=t.target.closest(".task-card"),a=Number(e.dataset.id),s=r.find(({id:l})=>l===a),n=r.indexOf(s);n!==-1&&(r.splice(n,1),o(r),localStorage.setItem("tasks",JSON.stringify(r)))}function S(t){const e=t.target.closest(".task-card"),a=Number(e.dataset.id),s=r.find(({id:n})=>n===a);s&&(s.done=!s.done,localStorage.setItem("tasks",JSON.stringify(r)),o(r))}function v(t){return fetch(t).then(e=>{if(!e.ok)throw new Error(e.statusText);return e.json()}).catch(e=>{console.log(e)})}
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=tasks.js.map
